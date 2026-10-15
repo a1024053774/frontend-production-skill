@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>精工减速机 · 询价</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <span class="logo">精工传动</span>
+    <button class="btn menu-trigger" id="menuBtn">产品</button>
+    <ul class="menu" id="menu"><li>斜齿轮减速机</li><li>行星减速机</li></ul>
+  </header>
+
+  <section class="hero reveal">
+    <p class="eyebrow">WELCOME TO THE FUTURE</p>
+    <h1>赋能智造，引领工业传动新纪元</h1>
+    <p>我们提供全面、无缝、领先的一站式传动解决方案，已获行业领先认证。</p>
+    <div class="stats"><b>99.9%</b> 交付成功率 · <b>5000+</b> 企业客户</div>
+    <button class="btn primary">Get Started</button>
+  </section>
+
+  <section class="spec reveal">
+    <h2>规格</h2>
+    <table><tr><th>速比</th><td>5–100</td></tr><tr><th>额定扭矩</th><td>至 18 kN·m</td></tr></table>
+  </section>
+
+  <section class="form reveal">
+    <h2>提交询价</h2>
+    <input id="search" placeholder="搜索型号">
+    <ul id="results"></ul>
+    <input id="qty" placeholder="数量">
+    <input id="phone" placeholder="手机号">
+    <div id="note"></div>
+  </section>
+
+  <div class="bottom-bar">
+    <div class="btn primary" id="submit" onclick="submitOrder()">提交询价</div>
+  </div>
+
+  <div class="modal" id="modal" hidden>
+    <div class="modal-box"><p>询价已提交</p><button class="btn" id="closeModal">好的</button></div>
+  </div>
+
+  <div class="palette" id="palette"><input placeholder="输入命令…"></div>
+
+  <footer class="site-footer">
+    <p>© 精工传动 · <a href="/about">关于我们</a></p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
