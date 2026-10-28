@@ -9,6 +9,7 @@
 | motion.md、motion-recipes.md | [emilkowalski/skills](https://github.com/emilkowalski/skills) 的 animate、review-animations、improve-animations | MIT（Emil Kowalski） | 三份合并去重并译成中文；代码、曲线、时长、阈值原样保留 |
 | mobile-web.md | 同上 mobile-native | MIT（Emil Kowalski） | 译成中文；代码原样保留；补充审查模式下的分级换算 |
 | plan-template.md | 同上 improve-animations 的 PLAN-TEMPLATE | MIT（Emil Kowalski） | 从动效扩展到所有镜头 |
+| unslop-passes.md；look-and-copy.md 的"产品界面"一节；visual-family.md 族卡的"间距刻度"一行 | 观察 Damir Sokolovsky 的短视频 "Unslopping a vibecoded dashboard"（[x.com/heydamir](https://x.com/heydamir/status/2115063463063998736)，2026-10，无声、无字幕） | 不涉及：只记录看到的改造顺序 | 从关键帧推断出顺序（量间距归刻度 → 去色 → 对齐 → 统一图标 → 改文案 → 图表说真话 → 收字重 → 只把有含义的颜色加回）；文字为自写，不含视频画面或素材；改造后的深色样式不当作规则 |
 | review-workflow.md、engineering-checks.md | 方法参考 [BadbotAI/BadGoods](https://github.com/BadbotAI/BadGoods) 的 review-frontend-production 0.3.0-beta | **未授予开放许可** | 只借用审查方法（快审/全审、页面与组件分母、定义与实例、场景轴、P0–P3、证据边界、四项分开报告），文字为重写，不含其文本、脚本或示例 |
 
 上游钉住的版本：emilkowalski/skills 本地安装时的 skillFolderHash 见 `~/.agents/.skill-lock.json`；BadGoods 参考提交 `76d20b1`（2026-10-10）。

@@ -1,0 +1,13 @@
+offscale=12
+  padding: 10px
+  padding: 7px
+  margin: 6px
+  padding: 6px
+  padding: 5px
+  padding: 9px
+  margin: 6px
+  margin: 6px
+  margin-top: 6px
+  gap: 6px
+  padding: 6px
+  margin: 2px

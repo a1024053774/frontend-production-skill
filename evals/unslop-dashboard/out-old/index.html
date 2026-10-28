@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview · Nova</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">Nova</div>
+    <input class="search" id="search" type="search" placeholder="Search" aria-label="Search">
+    <nav aria-label="Main">
+      <a class="nav-item active" href="#overview" aria-current="page">Overview</a>
+      <a class="nav-item" href="#inbox">Inbox <span class="count">12</span></a>
+      <a class="nav-item" href="#projects">Projects <span class="tag">New</span></a>
+      <a class="nav-item" href="#invoices">Invoices</a>
+      <a class="nav-item" href="#reports">Reports</a>
+    </nav>
+    <p class="section-label">Plans</p>
+    <ul class="plans">
+      <li>Agency <span class="count">18</span></li>
+      <li>Studio <span class="count">64</span></li>
+      <li>Solo <span class="count">210</span></li>
+    </ul>
+  </aside>
+  <main class="main">
+    <header class="page-head">
+      <h1>Overview</h1>
+      <button class="cta" id="export" type="button">Export CSV</button>
+    </header>
+    <div class="figures">
+      <section class="figure figure-paid">
+        <h2 class="label">Paid this month</h2>
+        <p class="metric">$48,210</p>
+        <p class="delta">+12%</p>
+      </section>
+      <section class="figure figure-overdue">
+        <h2 class="label">Overdue</h2>
+        <p class="metric">7</p>
+        <p class="delta">3 fewer</p>
+      </section>
+    </div>
+    <section class="figure chart">
+      <h2 class="label">Revenue by plan</h2>
+      <p class="metric metric-sm">$124,860.40</p>
+      <p class="delta">+4.2% this month</p>
+      <div class="bars" id="bars" aria-hidden="true">
+        <div class="bar" style="height:40%" title="Agency"></div>
+        <div class="bar" style="height:85%" title="Studio"></div>
+        <div class="bar" style="height:60%" title="Solo"></div>
+      </div>
+      <div class="bar-labels"><span>Agency</span><span>Studio</span><span>Solo</span></div>
+    </section>
+  </main>
+</div>
+<script>
+document.getElementById('export').addEventListener('click', () => { location.href = '/export.csv'; });
+document.getElementById('search').addEventListener('input', (e) => { document.body.dataset.q = e.target.value; });
+</script>
+</body>
+</html>

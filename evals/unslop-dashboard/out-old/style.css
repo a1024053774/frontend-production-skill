@@ -1,0 +1,66 @@
+/* Direction: a ledger page. Paper ground, black tabular figures, hairline rules,
+   one oxblood ink reserved for overdue and the export action. */
+:root {
+  --paper: #f6f4ee;
+  --ink: #1d1c1a;
+  --muted: #5f5b52;
+  --rule: #d8d3c6;
+  --accent: #9a2a1c;
+  --accent-ink: #ffffff;
+  --figure-font: Georgia, "Times New Roman", "Songti SC", serif;
+}
+
+body { margin:0; font-family: -apple-system, "Segoe UI", "Helvetica Neue", "PingFang SC", sans-serif; font-size:15px; line-height:1.45; color:var(--ink); background:var(--paper); min-height:100vh; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+.shell { display:flex; min-height:100vh; }
+
+.sidebar { width:220px; flex:none; padding:24px 16px; border-right:1px solid var(--rule); }
+.brand { font-family:var(--figure-font); font-size:22px; font-weight:700; margin:0 8px 20px; }
+.search { box-sizing:border-box; width:100%; padding:8px 10px; margin-bottom:16px; font:inherit; color:inherit; background:#fff; border:1px solid var(--rule); border-radius:4px; }
+.nav-item { display:flex; justify-content:space-between; align-items:baseline; padding:7px 8px; color:inherit; text-decoration:none; border-radius:4px; }
+.nav-item:hover { background:#ece8de; }
+.nav-item.active { font-weight:600; box-shadow:inset 2px 0 0 var(--ink); background:#ece8de; }
+.section-label { font-size:13px; color:var(--muted); margin:28px 8px 6px; }
+.plans { list-style:none; padding:0; margin:0; }
+.plans li { display:flex; justify-content:space-between; padding:6px 8px; }
+.count { font-variant-numeric:tabular-nums; color:var(--muted); }
+.tag { font-size:12px; color:var(--muted); border:1px solid var(--rule); border-radius:3px; padding:0 5px; }
+
+.main { flex:1; min-width:0; padding:28px 40px 48px; max-width:960px; }
+.page-head { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-bottom:16px; border-bottom:1px solid var(--ink); }
+.page-head h1 { font-size:20px; font-weight:600; margin:0; }
+.cta { font:inherit; font-weight:600; padding:9px 16px; color:var(--accent-ink); background:var(--accent); border:0; border-radius:4px; cursor:pointer; }
+.cta:hover { background:#7f2216; }
+
+.figures { display:grid; grid-template-columns:2fr 1fr; border-bottom:1px solid var(--rule); }
+.figure { padding:24px 0; }
+.figure-overdue { padding-left:32px; border-left:1px solid var(--rule); }
+.label { font-size:13px; font-weight:400; color:var(--muted); margin:0 0 6px; }
+.metric { font-family:var(--figure-font); font-variant-numeric:tabular-nums lining-nums; font-size:40px; line-height:1.1; margin:0; }
+.figure-paid .metric { font-size:64px; }
+.figure-overdue .metric { color:var(--accent); }
+.metric-sm { font-size:28px; }
+.delta { font-variant-numeric:tabular-nums; color:var(--muted); margin:6px 0 0; }
+
+.chart { padding-top:28px; }
+.bars { display:flex; align-items:flex-end; gap:24px; height:200px; margin-top:20px; border-bottom:1px solid var(--ink); }
+.bar { flex:1; max-width:120px; background:var(--ink); }
+.bar-labels { display:flex; gap:24px; margin-top:6px; font-size:13px; color:var(--muted); }
+.bar-labels span { flex:1; max-width:120px; }
+
+@media (max-width: 720px) {
+  .shell { flex-direction:column; }
+  .sidebar { width:auto; border-right:0; border-bottom:1px solid var(--rule); padding:16px; }
+  .brand { margin:0 0 12px; }
+  .search { margin-bottom:8px; }
+  /* Keep nav and plan counts compact so the figures and Export CSV stay near the top. */
+  nav, .plans { display:flex; flex-wrap:wrap; gap:4px 12px; }
+  .nav-item, .plans li { gap:6px; padding:6px 4px; }
+  .nav-item.active { box-shadow:inset 0 -2px 0 var(--ink); }
+  .section-label { margin:12px 0 2px; }
+  .main { padding:20px 16px 40px; }
+  .figures { grid-template-columns:1fr; }
+  .figure-overdue { padding-left:0; border-left:0; border-top:1px solid var(--rule); }
+  .figure-paid .metric { font-size:48px; }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaAI Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✨</span> NovaAI <span class="pro">PRO</span></div>
+    <input class="search" id="search" placeholder="🔍 Search anything...">
+    <p class="section-label">NAVIGATION</p>
+    <nav>
+      <a class="nav-item active" href="#overview">🏠 Overview</a>
+      <a class="nav-item" href="#inbox">📥 Inbox <span class="pill pink">12</span></a>
+      <a class="nav-item" href="#projects">🚀 Projects <span class="pill violet">New ✨</span></a>
+      <a class="nav-item" href="#invoices">💸 Invoices</a>
+      <a class="nav-item" href="#reports">📊 Reports</a>
+    </nav>
+    <p class="section-label">PLANS</p>
+    <ul class="plans">
+      <li>🏢 Agency <span class="pill blue">18</span></li>
+      <li>💼 Studio <span class="pill teal">64</span></li>
+      <li>🌱 Solo <span class="pill orange">210</span></li>
+    </ul>
+  </aside>
+  <main class="main">
+    <h1 class="greeting">Welcome back, Alex! 👋</h1>
+    <div class="cards">
+      <section class="card glass">
+        <p class="card-label">💰 PAID THIS MONTH</p>
+        <p class="metric">$48,210</p>
+        <p class="delta">🔥 +12%!!</p>
+      </section>
+      <section class="card glass">
+        <p class="card-label">⚠️ OVERDUE</p>
+        <p class="metric">07</p>
+        <p class="delta">😬 3 less!!</p>
+      </section>
+    </div>
+    <section class="card glass chart-card">
+      <p class="card-label">📈 REVENUE BY PLAN</p>
+      <p class="metric">$124,860.40</p>
+      <p class="delta">🚀 +4.2% this month!!</p>
+      <div class="bars" id="bars">
+        <div class="bar" style="height:40%;background:linear-gradient(#a78bfa,#6366f1)" title="Agency"></div>
+        <div class="bar" style="height:85%;background:linear-gradient(#f472b6,#a855f7)" title="Studio"></div>
+        <div class="bar" style="height:60%;background:linear-gradient(#22d3ee,#818cf8)" title="Solo"></div>
+      </div>
+    </section>
+    <button class="cta" id="export">Get Started 🚀</button>
+  </main>
+</div>
+<script>
+document.getElementById('export').addEventListener('click', () => { location.href = '/export.csv'; });
+document.getElementById('search').addEventListener('input', (e) => { document.body.dataset.q = e.target.value; });
+</script>
+</body>
+</html>

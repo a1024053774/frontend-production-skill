@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova · Overview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">Nova</div>
+    <input class="search" id="search" type="search" placeholder="Search" aria-label="Search">
+    <nav aria-label="Main">
+      <a class="nav-item active" href="#overview" aria-current="page">Overview</a>
+      <a class="nav-item" href="#inbox">Inbox <span class="count">12</span></a>
+      <a class="nav-item" href="#projects">Projects <span class="tag">New</span></a>
+      <a class="nav-item" href="#invoices">Invoices</a>
+      <a class="nav-item" href="#reports">Reports</a>
+    </nav>
+    <p class="section-label">Plans</p>
+    <ul class="plans">
+      <li><span class="plan-name"><span class="dot plan-agency" aria-hidden="true"></span>Agency</span> <span class="count">18</span></li>
+      <li><span class="plan-name"><span class="dot plan-studio" aria-hidden="true"></span>Studio</span> <span class="count">64</span></li>
+      <li><span class="plan-name"><span class="dot plan-solo" aria-hidden="true"></span>Solo</span> <span class="count">210</span></li>
+    </ul>
+  </aside>
+  <main class="main">
+    <header class="page-head">
+      <h1 class="page-title">Collections and overdue</h1>
+      <button class="cta" id="export" type="button">Export CSV</button>
+    </header>
+    <div class="cards">
+      <section class="card card-paid">
+        <p class="card-label">Paid this month</p>
+        <p class="metric">$48,210</p>
+        <p class="delta">+12%</p>
+      </section>
+      <section class="card card-overdue">
+        <p class="card-label">Overdue</p>
+        <p class="metric">7</p>
+        <p class="delta">3 fewer</p>
+      </section>
+    </div>
+    <section class="card chart-card">
+      <p class="card-label">Revenue by plan</p>
+      <p class="metric metric-secondary">$124,860.40</p>
+      <p class="delta">+4.2% this month</p>
+      <div class="bars" id="bars">
+        <div class="bar plan-agency" style="height:40%" title="Agency"></div>
+        <div class="bar plan-studio" style="height:85%" title="Studio"></div>
+        <div class="bar plan-solo" style="height:60%" title="Solo"></div>
+      </div>
+      <div class="bar-labels" aria-hidden="true">
+        <span>Agency</span><span>Studio</span><span>Solo</span>
+      </div>
+    </section>
+  </main>
+</div>
+<script>
+document.getElementById('export').addEventListener('click', () => { location.href = '/export.csv'; });
+document.getElementById('search').addEventListener('input', (e) => { document.body.dataset.q = e.target.value; });
+</script>
+</body>
+</html>

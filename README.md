@@ -4,7 +4,7 @@
 
 | 镜头 | 管什么 |
 |---|---|
-| 样子与文案 | 主行动、视觉方向、一个记忆点、按钮与空状态文案、AI 默认皮否决 |
+| 样子与文案 | 主行动、视觉方向、一个记忆点、按钮与空状态文案、AI 默认皮否决（含后台与仪表盘）；改造已有界面时先普查、再按顺序做减法 |
 | 同族 | 多来源区块装进已选体系，借结构不借皮 |
 | 动效 | 该不该动、曲线与时长、中断、减弱动效；单次审查与代码库改进计划 |
 | 手机端 | 视口、触摸、滚动、安全区；必须真机确认的部分 |
@@ -23,7 +23,7 @@
 
 基线模型本身已经很强，这个夹具区分度有限。可见差别在：动效频率规则和具体目标值、族卡逐值对照、"源码确证/源码推理"分开标注、级别按后果定并写明升降条件。两份报告都没把未运行的结论写成通过。
 
-夹具、提示词、两份报告和逐项评分在 [`evals/quick-review-order-page/`](evals/quick-review-order-page/)，复跑方法见其中的 [`PROMPTS.md`](evals/quick-review-order-page/PROMPTS.md)。这证明 Skill 被执行时能改输出，不是审美或上线通过证明。
+夹具、提示词、两份报告和逐项评分在 [`evals/quick-review-order-page/`](evals/quick-review-order-page/)，复跑方法见其中的 [`PROMPTS.md`](evals/quick-review-order-page/PROMPTS.md)。去 slop 改造的新旧版本对照在 [`evals/unslop-dashboard/`](evals/unslop-dashboard/)。这证明 Skill 被执行时能改输出，不是审美或上线通过证明。
 
 ## 适用范围
 
