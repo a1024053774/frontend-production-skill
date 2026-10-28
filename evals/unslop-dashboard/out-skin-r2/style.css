@@ -1,0 +1,67 @@
+/* Direction: a daily collections sheet for an agency's owner and bookkeeper —
+   statement blue-grey ink on cool white, figures right-aligned like a bank statement,
+   and the only loud mark is the overdue red. Spacing scale: 4 8 12 16 24 32 48. */
+:root {
+  --bg: #eef1f4;          /* page */
+  --panel: #ffffff;       /* panels */
+  --ink: #1c2633;         /* primary text */
+  --muted: #5b6878;       /* labels, secondary text */
+  --rule: #d5dbe2;        /* borders and baselines */
+  --accent: #23466e;      /* brand: active nav, primary button */
+  --overdue: #b42318;     /* status: overdue */
+  --plan-agency: #4a7fb5; /* series: Agency */
+  --plan-studio: #b8862e; /* series: Studio */
+  --plan-solo: #5f7d3c;   /* series: Solo */
+  --radius: 6px;
+}
+
+body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size:15px; line-height:1.45; color:var(--ink); background:var(--bg); min-height:100vh; }
+.shell { display:flex; gap:24px; padding:16px; }
+
+.sidebar { width:240px; flex-shrink:0; padding:24px 16px; background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); }
+.brand { font-size:20px; font-weight:700; letter-spacing:-.01em; padding:0 12px; margin-bottom:24px; }
+.search { box-sizing:border-box; width:100%; padding:8px 12px; border:1px solid #8794a3; border-radius:4px; background:var(--bg); color:inherit; font:inherit; }
+.section-label { font-size:13px; color:var(--muted); padding:0 12px; margin:32px 0 8px; }
+.nav-item { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; margin-bottom:4px; border-radius:4px; color:inherit; text-decoration:none; }
+.nav-item:hover { background:var(--bg); }
+.nav-item.active { background:var(--accent); color:#fff; font-weight:600; }
+.plans { list-style:none; padding:0; margin:0; }
+.plans li { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; }
+.plan-name { display:flex; align-items:center; gap:8px; }
+.dot { width:8px; height:8px; border-radius:50%; }
+.dot.plan-agency, .bar.plan-agency { background:var(--plan-agency); }
+.dot.plan-studio, .bar.plan-studio { background:var(--plan-studio); }
+.dot.plan-solo, .bar.plan-solo { background:var(--plan-solo); }
+.count { font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.nav-item.active .count { color:inherit; }
+.tag { font-size:12px; color:var(--accent); border:1px solid var(--rule); border-radius:4px; padding:0 4px; }
+
+.main { flex:1; min-width:0; padding:24px 32px; }
+.greeting { font-size:24px; font-weight:600; margin:0 0 24px; }
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.card { padding:24px; background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); }
+.card-overdue { border-left:4px solid var(--overdue); }
+.card-label { font-size:14px; color:var(--muted); margin:0 0 8px; }
+.metric { font-size:36px; font-weight:600; line-height:1.1; margin:0; font-variant-numeric:tabular-nums; }
+.card-overdue .metric { color:var(--overdue); }
+.delta { font-size:14px; color:var(--muted); margin:8px 0 0; font-variant-numeric:tabular-nums; }
+
+.bars { display:flex; align-items:flex-end; gap:24px; height:220px; margin-top:24px; border-bottom:1px solid var(--ink); }
+.bar { flex:1; border-radius:2px 2px 0 0; }
+.bar-labels { display:flex; gap:24px; margin-top:8px; font-size:13px; color:var(--muted); }
+.bar-labels span { flex:1; text-align:center; }
+.chart-gap { font-size:13px; color:var(--muted); margin:16px 0 0; }
+
+.cta { margin-top:24px; padding:12px 24px; border:0; border-radius:4px; font:inherit; font-weight:600; color:#fff; background:var(--accent); cursor:pointer; }
+.cta:hover { background:#1a3655; }
+
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.nav-item.active:focus-visible, .cta:focus-visible { outline-color:var(--ink); }
+
+@media (max-width: 720px) {
+  .shell { flex-direction:column; padding:16px; gap:16px; }
+  .sidebar { width:auto; }
+  .main { padding:0; }
+  .cards { grid-template-columns:1fr; }
+  .cta { width:100%; }
+}

@@ -31,7 +31,7 @@ description: 把 Web 前端做到能上线、也审到能上线。覆盖界面�
 
 | 镜头 | 管什么 | 读 |
 |---|---|---|
-| 样子与文案 | 主行动、视觉方向、一个记忆点、按钮和空状态文案、AI 默认皮否决（含后台与仪表盘）；改造已有界面的去 slop 顺序 | [look-and-copy.md](references/look-and-copy.md)；正反例 [look-examples.md](references/look-examples.md)；改造流程 [unslop-passes.md](references/unslop-passes.md) |
+| 样子与文案 | 主行动、视觉方向、一个记忆点、按钮和空状态文案、AI 默认皮否决（含后台与仪表盘）；改造已有界面的去 slop 顺序 | [look-and-copy.md](references/look-and-copy.md)；正反例 [look-examples.md](references/look-examples.md)（定完方向再看，不沿用它的样子）；改造流程 [unslop-passes.md](references/unslop-passes.md) |
 | 同族 | 多来源区块装进已选体系：借结构不借皮、族卡、否决条件 | [visual-family.md](references/visual-family.md)；正反例 [family-examples.md](references/family-examples.md) |
 | 动效 | 该不该动、目的、工具、属性、曲线与时长、中断、减弱动效；审查与改进计划 | [motion.md](references/motion.md)；具体组件配方 [motion-recipes.md](references/motion-recipes.md) |
 | 手机端 | 视口、触摸、滚动、安全区、浏览器外壳；必须真机验证的部分 | [mobile-web.md](references/mobile-web.md) |

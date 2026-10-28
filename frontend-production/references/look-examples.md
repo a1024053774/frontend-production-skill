@@ -2,6 +2,8 @@
 
 同一份 brief，先按常见模型默认写，再按样子与文案镜头写。
 
+**读之前**：这里的"样子"只对这家减速机厂成立：新闻纸底和氧化红来自车间和规格表。要学的是差别怎么来的，也就是方向从内容和读者里来、事实不编、只留一个记忆点；不要学这套颜色、字体和排版。定完自己的方向再看这里。如果你的界面看起来和"用了镜头"那版是一家，就是借了它的皮，回到 look-and-copy.md 的"开工前"重写方向句。
+
 - 未用镜头：[before.html](https://a1024053774.github.io/frontend-less-ai-tone-skill/before.html) · [截图](https://a1024053774.github.io/frontend-less-ai-tone-skill/before.png)
 - 用了镜头：[after.html](https://a1024053774.github.io/frontend-less-ai-tone-skill/after.html) · [截图](https://a1024053774.github.io/frontend-less-ai-tone-skill/after.png)
 - 托管对照：[GitHub Pages](https://a1024053774.github.io/frontend-less-ai-tone-skill/)
@@ -26,7 +28,7 @@
 
 | | 未用镜头 | 用了镜头 |
 | --- | --- | --- |
-| 气质 | 近黑底 + 靛蓝渐变 + 光斑，换家公司也能用 | 新闻纸底 + 氧化红只打在速比和主按钮上 |
+| 气质 | 近黑底 + 靛蓝渐变 + 光斑，换家公司也能用 | 新闻纸底 + 氧化红只打在速比和主按钮上（只属于这份 brief，别的产品不要沿用） |
 | 记忆点 | 没有，每块一样重 | 超大「5–100」 |
 | 动效 | 多块 fade-up | 无 |
 | 结构 | Logo 墙、评价、三步 01/02/03 | 规格表 + 询盘要带什么 |
