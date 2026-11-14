@@ -154,16 +154,30 @@ toast 堆叠、列表重排时，opacity 变化要和 height 变化配合。这�
 
 ## 手风琴 / 折叠
 
+先看项目：已有组件库的 Accordion 就用它，它会把测好的内容高度放进 CSS 变量（Base UI 是 `--accordion-panel-height`，Radix 是 `--radix-accordion-content-height`），对这个变量做 `height` 过渡。
+
+没有组件库时，用原生 `<details>`，对 `::details-content` 的 `block-size` 做过渡：
+
 ```css
-.content {
-  overflow: hidden;
-  transition:
-    height 200ms var(--ease-out),
-    opacity 200ms var(--ease-out);
+details::details-content {
+  interpolate-size: allow-keywords;   /* 允许在 0 和 auto 之间插值 */
+  overflow: clip;
+  contain: layout;                    /* 内容有外边距时防止收起抖动 */
+}
+details:not([open])::details-content { block-size: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  details::details-content {
+    transition: block-size 200ms var(--ease-out),
+                content-visibility 200ms var(--ease-out);
+    transition-behavior: allow-discrete; /* 收起结束前内容保持渲染 */
+  }
 }
 ```
 
-保持短：这是少数每帧都花布局成本的动画，时长长了既慢又贵。用 JS 测量内容高度（或用能提供高度的无样式 primitive），不要动画到 `auto`。
+- 这是渐进增强。`interpolate-size` 写这份配方时只有 Chromium 支持，Safari 和 Firefox 里展开收起是瞬间完成的，功能不受影响。iOS Safari 上也必须有动画时，改用组件库的高度变量，或用 JS 测量内容高度；仍然不要对没有 `interpolate-size` 的 `auto` 做过渡。
+- 保持短：这是少数每帧都花布局成本的动画，时长长了既慢又贵。
+- 结构、可访问性、`name` 互斥、"全部展开"按钮和查找页内文字：用 `modern-web-guidance` 取 `accordion` 指南（`npx -y modern-web-guidance@latest retrieve "accordion"`）。
 
 ---
 

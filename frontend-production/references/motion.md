@@ -75,15 +75,17 @@
 | 挂载时入场，没有 JS 状态 | **CSS `@starting-style`** |
 | 预定好的动作，页面忙于加载时也要流畅 | **CSS animation**（不在主线程跑） |
 | 需要程序控制、又要 CSS 的性能，不引库 | **WAAPI**（`element.animate()`） |
+| 原生 `<dialog>`、`popover` 的进出场（顶层元素） | **CSS transition + `@starting-style` + `transition-behavior: allow-discrete`**（过渡 `overlay` 和 `display`） |
+| 跟随滚动进度的效果（进度条、视差、滚动揭示） | **CSS 滚动驱动动画**（`animation-timeline: scroll()` / `view()`），不支持时不动 |
 | 弹簧、布局动画、退场动画、手势驱动的值 | **Motion**（`motion.dev`） |
 
 负载下 CSS 动画胜过 JS：CSS 不在主线程，基于 `requestAnimationFrame` 的动画在浏览器加载、跑脚本或绘制时会掉帧。预定动作用 CSS，动态和可中断的用 JS。
 
-如果任务要的是一个*组件*而不是一段动画（toast、抽屉、命令菜单、下拉框），先用项目已有的组件库或成熟的无样式 primitives。手写这些往往得到一个 `<div>` 下拉框，没有焦点管理。
+如果任务要的是一个*组件*而不是一段动画（toast、抽屉、命令菜单、下拉框），先用项目已有的组件库或成熟的无样式 primitives。手写这些往往得到一个 `<div>` 下拉框，没有焦点管理。项目没有组件库、要从原生元素写起时，用哪个浏览器 API、浏览器不支持时怎么退，交给 `modern-web-guidance` 查（例如 `dialog`、`animate-to-from-top-layer`、`accordion`、`scroll-progress-indicator`、`parallax-scroll-effects` 指南）；本文件仍然管缓动、时长和审查。
 
 ### 3.4 选属性
 
-- **只动 `transform` 和 `opacity`。** 它们跳过布局和绘制，在 GPU 上跑。`width`/`height`/`margin`/`padding`/`top`/`left` 三步都会触发。（`clip-path` 是认可的第四个，见配方。`height` 只在手风琴里容忍，那里没有等价的 transform。）
+- **只动 `transform` 和 `opacity`。** 它们跳过布局和绘制，在 GPU 上跑。`width`/`height`/`margin`/`padding`/`top`/`left` 三步都会触发。（`clip-path` 是认可的第四个，见配方。`height`/`block-size` 只在手风琴里容忍，那里没有等价的 transform，写法见配方。）
 - **永远不用 `scale(0)`。** 从 `scale(0.9–0.97)` 加 `opacity: 0` 开始。现实里没有东西凭空出现。
 - **弹层、下拉、菜单、提示的 `transform-origin` 放在触发器上**，Base UI 里是 `var(--transform-origin)`。**模态框例外**：它不锚定触发器，保持居中。
 - **`translate()` 的百分比相对元素自身尺寸**：`translateY(100%)` 不管内容多少，都移动自身高度。优先于写死的像素。
